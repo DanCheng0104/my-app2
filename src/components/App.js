@@ -4,9 +4,17 @@ import './App.css';
 import Map from './Map';
 
 class App extends Component {
+  constructor(){
+    super();
+    this.state ={
+      map:{
+        center:[ -118.382877, 34.284700]
+      }
+    };
+  }
   render() {
     return (
-      <Map />
+      <Map mapProps={this.state.map}/>
     );
   }
 }

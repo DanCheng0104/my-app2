@@ -3,21 +3,24 @@ import React, { Component } from 'react';
 import { token } from '../config.json'
 
 class Map extends Component {
+  constructor(){
+    super();
+    
+
+  }
   render() {
+
     const Map = ReactMapboxGl({
-        accessToken: token
+        accessToken: token,
+        minZoom:8,
+        maxZoom:15
+
     });
     return (
-        <Map style="mapbox://styles/mapbox/streets-v8" containerStyle={{
+        <Map style="mapbox://styles/mapbox/streets-v8" center={this.props.mapProps.center} containerStyle={{
             height: "100vh",
             width: "70vw"
-          }}>
-              <Layer
-                type="symbol"
-                id="marker"
-                layout={{ "icon-image": "marker-15" }}>
-                <Feature coordinates={[-0.481747846041145, 51.3233379650232]}/>
-             </Layer>
+          }} >
         </Map>
     );
   }
