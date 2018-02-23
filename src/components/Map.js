@@ -5,11 +5,6 @@ import { token } from '../config.json'
 class Map extends Component {
   constructor(){
     super();   
-    this.state = {
-      layer : {
-        filter: ["all",['==','YEAR',2011],['==','ID','neighborhoods_291']]
-      }
-    } 
   }
 
 
@@ -22,7 +17,7 @@ class Map extends Component {
     
     const VECTOR_SOURCE_OPTIONS = {
       "type":"vector",
-      "url": "mapbox://dcheng0104.9ehsg54h"
+      "url": "mapbox://dcheng0104.cyb89w7a"
       
     }
 
@@ -37,7 +32,7 @@ class Map extends Component {
             width: "100vw"
           }} >
           <Source id="nb" tileJsonSource={VECTOR_SOURCE_OPTIONS} />
-          <Layer type="fill" id="layer_id" sourceId={"nb"}  sourceLayer='water_usage_bld_2_neighborhoo-dp4txq' paint={PAINT_OPTIONS} filter={this.state.layer.filter}/>
+          <Layer type="fill" id="layer_id" sourceId={"nb"}  sourceLayer='usage_nbgeojson' paint={PAINT_OPTIONS} filter={this.props.layerProps.filter} />
         </Map>
     );
   }
