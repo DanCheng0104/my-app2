@@ -8,7 +8,8 @@ class App extends Component {
     super();
     this.state ={
       map:{
-        center:[ -118.382877, 34.284700]
+        center:[ -118.382877, 34.284700],
+        zoom: [9]
       }
     };
   }
