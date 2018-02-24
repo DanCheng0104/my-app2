@@ -27,12 +27,12 @@ class Map extends Component {
     }
 
     return (
-        <Map style="mapbox://styles/mapbox/streets-v8" center={this.props.mapProps.center} zoom={this.props.mapProps.zoom} containerStyle={{
+        <Map style="mapbox://styles/mapbox/streets-v8" center={this.props.map.center} zoom={this.props.map.zoom} containerStyle={{
             height: "100vh",
-            width: "100vw"
+            width: "70vw"
           }} >
           <Source id="nb" tileJsonSource={VECTOR_SOURCE_OPTIONS} />
-          <Layer type="fill" id="layer_id" sourceId={"nb"}  sourceLayer='usage_nbgeojson' paint={PAINT_OPTIONS} filter={this.props.layerProps.filter} />
+          <Layer type="fill" id="layer_id" sourceId={"nb"}  sourceLayer='usage_nbgeojson' paint={PAINT_OPTIONS} filter={this.props.layer.filter} />
         </Map>
     );
   }

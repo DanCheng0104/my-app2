@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-import logo from '../logo.svg';
-import './App.css';
+// import logo from '../logo.svg';
+import PanelContent from './PanelContent';
 import Map from './Map';
-import Sidebar from './Sidebar';
-
 class App extends Component {
   constructor(){
     super();
@@ -18,8 +16,13 @@ class App extends Component {
     };
   }
   render() {
+    const BUTTONS = ['Default', 'Primary', 'Success', 'Info', 'Warning', 'Danger'];
     return (
-      <Map mapProps={this.state.map} layerProps={this.state.layer}/>
+      <div>
+        <Map map={this.state.map} layer={this.state.layer}/>
+        <PanelContent/>
+      </div>
+      
     );
   }
 }
